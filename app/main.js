@@ -1,12 +1,19 @@
 var solar = document.getElementById('solarPanel');
 var display = document.getElementById('display');
-var digits = document.getElementsByClassName('numeric-btn');
+var keys = document.getElementsByClassName('key');
+
+var value1;
+var value2;
+var selectedOperator;
 
 // Wait for page to load before doing what this guy says
 document.onreadystatechange = function() {
 	if (document.readyState === "interactive") {
-		for (i = 0; i < digits.length; i++) {
-			digits[i].addEventListener("click", ButtonLogic);
+
+		allClear();
+
+		for (i = 0; i < keys.length; i++) {
+			keys[i].addEventListener("click", ButtonLogic);
 			//console.log( digits[ i ]);
 		}
 		solarPanel.addEventListener("click", Surprise);
@@ -18,15 +25,41 @@ function ButtonLogic() {
 	// console.log( this );
 	// console.log( this.innerHTML );
 
-	var digit = this.innerHTML;
-	var currentDisplay = display.innerHTML;
+	var keyLabel = this.innerHTML;
+	//console.log(this.classList.contains('numeric-btn'));
 
-	if (currentDisplay === "0") {
-		display.innerHTML = digit;
-	} else {
-		display.innerHTML = currentDisplay + digit;
+	if (this.classList.contains('numeric-btn')) {
+		if (display.innerHTML === "0") {
+			display.innerHTML = keyLabel;
+		} else {
+			display.innerHTML = display.innerHTML + keyLabel;
+		}
+	} else if (this.classList.contains('decimal')) {
+		alert("decimal alert");
+	} else if (this.classList.contains('operator')) {
+		alert("operator alert");
+	} else if (this.classList.contains('allclear')) {
+		allClear();
+	} else if (this.classList.contains('clear')) {
+		clear();
 	}
 
+}
+
+function clear() {
+	if (selectedOperator === '') {
+		value1 = '';
+	} else {
+		value2 = '';
+	}
+	alert("clear!");
+}
+
+function allClear() {
+	value1 = '';
+	value2 = '';
+	selectedOperator = '';
+	display.innerHTML = '0';
 }
 
 function Surprise() {

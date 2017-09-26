@@ -58,3 +58,5 @@ When the Sign button (+/-) is pressed, must change the sign of the current value
 ### Decimal Point Button
 
 When the decimal point is pressed, must append '.' to the current number and show in the display.
+
+Must only be able to enter a decimal once in a stored number.  If the decimal point is pressed more than once by the user, it must be recorded only the first time.
