@@ -1,0 +1,27 @@
+.row {
+	margin-bottom: 12px;
+	margin-bottom: 12px;
+}
+
+.calculator {
+	background-color: #f3f6f7;
+	max-width: 400px;
+	min-width: 300px;
+	padding: 12px;
+	text-align: center;
+}
+
+.calc-btn {
+	height: 50px;
+	width: 50px;
+}
+
+.calc-btn-2x {
+	height: 50px;
+	width: 100px;
+}
+
+.calc-btn-full {
+	height: 50px;
+	width: 100%;
+}
