@@ -1,3 +1,14 @@
+* {
+	font-family: 'Roboto Mono', monospace;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
 .row {
 	margin-bottom: 12px;
 	margin-bottom: 12px;
@@ -5,6 +16,7 @@
 
 .calculator {
 	background-color: #f3f6f7;
+	margin: auto;
 	max-width: 400px;
 	min-width: 300px;
 	padding: 12px;
@@ -24,15 +36,17 @@
 }
 
 .calc-display {
-	display: inline-block;
-	margin-bottom: 0;
-	font-weight: normal;
-	text-align: right;
-	vertical-align: middle;
 	background-color: #fff;
 	border: 1px solid #ccc;
-	padding: 8px 12px;
-	font-size: 24px;
 	border-radius: 4px;
+	display: inline-block;
+	font-weight: normal;
+	font-size: 24px;
+	height: 50px;
+	margin-bottom: 0;
+	padding: 8px 12px;
+	text-align: right;
+	vertical-align: middle;
+	white-space: nowrap;
 	width: 100%;
 }
