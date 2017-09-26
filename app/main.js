@@ -34,8 +34,14 @@ function ButtonLogic() {
 		} else {
 			display.innerHTML = display.innerHTML + keyLabel;
 		}
+		value1 = value1 + keyLabel;
 	} else if (this.classList.contains('decimal')) {
-		alert("decimal alert");
+		if (value1.indexOf('.') !== -1) {
+			// There is already a decimal in this number, so ignore it
+		} else {
+			display.innerHTML = display.innerHTML + keyLabel;
+			value1 = value1 + keyLabel;
+		}
 	} else if (this.classList.contains('operator')) {
 		alert("operator alert");
 	} else if (this.classList.contains('allclear')) {
