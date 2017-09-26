@@ -13,15 +13,26 @@
 
 .calc-btn {
 	height: 50px;
-	width: 50px;
+	min-width: 50px;
+	width: 100%;
 }
 
 .calc-btn-2x {
 	height: 50px;
-	width: 100px;
+	min-width: 120px;
+	width: 100%;
 }
 
-.calc-btn-full {
-	height: 50px;
+.calc-display {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: right;
+	vertical-align: middle;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	padding: 8px 12px;
+	font-size: 24px;
+	border-radius: 4px;
 	width: 100%;
 }
