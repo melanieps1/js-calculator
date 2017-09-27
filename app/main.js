@@ -38,7 +38,6 @@ function ButtonLogic() {
 	} else if (this.classList.contains('clear')) {		
 		clear();
 	}
-
 }
 
 function operator(keyLabel) {
