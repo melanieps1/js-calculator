@@ -37,9 +37,18 @@ function ButtonLogic() {
 		allClear();
 	} else if (this.classList.contains('clear')) {		
 		clear();
+	} else if (this.classList.contains('sign')) {
+		sign();
 	}
 
 	lastKeyPressed = keyLabel;
+}
+
+// WIP
+function sign(num) {
+	var temp = Number(num)*(-1);
+	console.log(temp);
+	return temp;
 }
 
 function operator(keyLabel) {

@@ -6,18 +6,26 @@
 </head>
 <body>
 
+	<!-- Our code expects these two ids, so putting them here to make the console errors go away -->
+	<div id="display" style="display: none !important;"></div>
+	<div id="solarPanel"></div>
+
 	<div id="mocha"></div>
 
 	<!-- Start the test suite -->
 	<script src="../node_modules/mocha/mocha.js"></script>
 	<script src="../node_modules/chai/chai.js"></script>
+	<script>mocha.setup('bdd');</script>
 
 	<!-- Load code to test here (functions that we have written) -->
 	<script src="../app/main.js"></script>
 
-	<!-- Put tests scripts here (tests we have written using our functions) -->
+	<!-- Put tests scripts here (tests we have written using our functions)	 -->
+	<script src="testArray.js"></script>
+	<script src="testCalculatorFunctions.js"></script>
 
-
+	<!-- Call Mocha to run -->
+	<script>mocha.run();</script>
 
 </body>
 </html>
