@@ -30,7 +30,7 @@ function ButtonLogic() {
 	} else if(this.classList.contains('calculate')) {
 		calculate();
 	} else if (this.classList.contains('decimal')) {		
-		decimal(keyLabel);
+		decimal(keyLabel, lastKeyPressed);
 	} else if (this.classList.contains('operator')) {		
 		operator(keyLabel);
 	} else if (this.classList.contains('allclear')) {		
@@ -67,7 +67,11 @@ function operator(keyLabel) {
 	}
 }
 
-function decimal(keyLabel) {
+function decimal(keyLabel, lastKey) {
+	if (lastKey === '=') {
+		allClear();
+	}
+
 	if (selectedOperator === '') {
 		if (value1.indexOf('.') == -1) {
 			if (value1 === '') {
@@ -120,7 +124,6 @@ function calculate() {
 
 	// clear selectedOperator
 	selectedOperator = '';
-
 }
 
 function numeric(keyLabel, lastKey) {
