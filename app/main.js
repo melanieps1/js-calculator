@@ -5,6 +5,7 @@ var keys = document.getElementsByClassName('key');
 var value1;
 var value2;
 var selectedOperator;
+var lastKeyPressed;
 
 // Wait for page to load before doing what this guy says
 document.onreadystatechange = function() {
@@ -23,10 +24,9 @@ document.onreadystatechange = function() {
 function ButtonLogic() {
 
 	var keyLabel = this.innerHTML;
-	//console.log(this.classList.contains('numeric'));
 
 	if (this.classList.contains('numeric')) {
-		numeric(keyLabel);
+		numeric(keyLabel, lastKeyPressed);
 	} else if(this.classList.contains('calculate')) {
 		calculate();
 	} else if (this.classList.contains('decimal')) {		
@@ -38,6 +38,8 @@ function ButtonLogic() {
 	} else if (this.classList.contains('clear')) {		
 		clear();
 	}
+
+	lastKeyPressed = keyLabel;
 }
 
 function operator(keyLabel) {
@@ -121,7 +123,11 @@ function calculate() {
 
 }
 
-function numeric(keyLabel) {
+function numeric(keyLabel, lastKey) {
+	if (lastKey === '=') {
+		allClear();
+	}
+
 	if (selectedOperator === '') {
 		// value1 = value1 + keyLabel; (this was replaced with the line below it)
 		value1 = properAppend(value1, keyLabel);
