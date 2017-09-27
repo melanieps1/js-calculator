@@ -2,10 +2,7 @@ var solar = document.getElementById('solarPanel');
 var display = document.getElementById('display');
 var keys = document.getElementsByClassName('key');
 
-var value1;
-var value2;
-var selectedOperator;
-var lastKeyPressed;
+var value1, value2, selectedOperator, lastKeyPressed = '';
 
 // Wait for page to load before doing what this guy says
 document.onreadystatechange = function() {
@@ -45,10 +42,8 @@ function ButtonLogic() {
 }
 
 // WIP
-function sign(num) {
-	var temp = Number(num)*(-1);
-	console.log(temp);
-	return temp;
+function sign() {
+	return value1 * -1;
 }
 
 function operator(keyLabel) {
@@ -102,28 +97,28 @@ function decimal(keyLabel, lastKey) {
 	}	
 }
 
-function calculate() {
-	var results = 0;
+function calculate(keyLabel) {
+	var result = 0;
 
 	switch (selectedOperator) {
 		case "+": 
-			results = Number(value1) + Number(value2);
+			result = Number(value1) + Number(value2);
 			break;
 		case "-":
-			results = Number(value1) - Number(value2);
+			result = Number(value1) - Number(value2);
 			break;
 		case "*":
-			results = Number(value1) * Number(value2);
+			result = Number(value1) * Number(value2);
 			break;
 		case "/":
-			results = Number(value1) / Number(value2);
+			result = Number(value1) / Number(value2);
 			break;
 		default:
 			alert("What are you doing?!");
 	}
 
 	// store results of calculation as value1
-	value1 = results;
+	value1 = result;
 
 	// update display with results of calculation (aka value1)
 	display.innerHTML = value1;
