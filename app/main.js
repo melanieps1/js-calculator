@@ -157,10 +157,11 @@ function properAppend(main, added) {
 function clear() {
 	if (selectedOperator === '') {
 		value1 = '';
+		display.innerHTML = '0';
 	} else {
 		value2 = '';
+		display.innerHTML = '0';
 	}
-	alert("clear!");
 }
 
 function allClear() {
