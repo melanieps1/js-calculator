@@ -59,19 +59,7 @@ function operator(keyLabel) {
 				selectedOperator = keyLabel;
 
 			} else {
-				// calculate
 				calculate();
-
-				// store results of calculation as value1
-
-
-				// update display with results of calculation (aka value1)
-
-
-				// clear value2
-				value2 = '';
-
-				// store keyLabel in selectedOperator
 				selectedOperator = keyLabel;
 			}
 		}
@@ -84,26 +72,6 @@ function decimal(keyLabel) {
 	} else {
 		display.innerHTML = display.innerHTML + keyLabel;
 		value1 = value1 + keyLabel;
-	}
-}
-
-function numeric(keyLabel) {
-	if (selectedOperator === '') {
-		// value1 = value1 + keyLabel; (this was replaced with the line below it)
-		value1 = properAppend(value1, keyLabel);
-		display.innerHTML = value1;
-	} else {
-		// value2 = value2 + keyLabel; (this was replaced with the line below it)
-		value2 = properAppend(value2, keyLabel);
-		display.innerHTML = value2;
-	}
-}
-
-function properAppend(main, added) {
-	if (main === "0") {
-		return added;
-	} else {
-		return main + added;
 	}
 }
 
@@ -125,6 +93,39 @@ function calculate() {
 			break;
 		default:
 			alert("What are you doing?!");
+	}
+
+	// store results of calculation as value1
+	value1 = results;
+
+	// update display with results of calculation (aka value1)
+	display.innerHTML = value1;
+
+	// clear value2
+	value2 = '';
+
+	// clear selectedOperator
+	selectedOperator = '';
+
+}
+
+function numeric(keyLabel) {
+	if (selectedOperator === '') {
+		// value1 = value1 + keyLabel; (this was replaced with the line below it)
+		value1 = properAppend(value1, keyLabel);
+		display.innerHTML = value1;
+	} else {
+		// value2 = value2 + keyLabel; (this was replaced with the line below it)
+		value2 = properAppend(value2, keyLabel);
+		display.innerHTML = value2;
+	}
+}
+
+function properAppend(main, added) {
+	if (main === "0") {
+		return added;
+	} else {
+		return main + added;
 	}
 }
 
