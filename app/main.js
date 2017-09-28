@@ -41,9 +41,19 @@ function ButtonLogic() {
 	lastKeyPressed = keyLabel;
 }
 
-// WIP
-function sign() {
-	return value1 * -1;
+function sign(lastKey) {
+	if (lastKey === '=') {
+		allClear();
+	}
+
+	if (value1 = display.innerHTML) {
+		display.innerHTML = parseFloat(display.innerHTML) * -1;
+		value1 = display.innerHTML;
+	}
+	else if (value2 = display.innerHTML) {
+		display.innerHTML = parseFloat(display.innerHTML) * -1;
+		value2 = display.innerHTML
+	}
 }
 
 function operator(keyLabel) {
