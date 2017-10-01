@@ -124,7 +124,7 @@ function calculate(keyLabel) {
 			result = Number(value1) / Number(value2);
 			break;
 		default:
-			alert("What are you doing?!");
+			alert("Invalid input. Please try again.");
 	}
 
 	// store results of calculation as value1
@@ -179,8 +179,4 @@ function allClear() {
 	value2 = '';
 	selectedOperator = '';
 	display.innerHTML = '0';
-}
-
-function Surprise() {
-	alert("SURPRISE!!!!!");
 }
